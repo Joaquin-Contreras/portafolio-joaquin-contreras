@@ -1,0 +1,149 @@
+<div class="extra-content">
+  <h2>Customer Churn Prediction - Análisis de Churn Mensual</h2>
+
+  <p>
+    El proyecto consistió en que una empresa iraní de telecomunicaciones que enfrentaba una alta
+    tasa de pérdida de clientes. El objetivo fue identificar cuáles clientes
+    tenían mayor riesgo de abandonar el servicio y comprender mejor los patrones
+    de comportamiento que llevan a esta decisión. Para ello, analicé datos
+    históricos de los clientes, incluyendo características personales, hábitos
+    de uso y comportamiento a lo largo del tiempo.
+  </p>
+  <br />
+  <p>
+    Desarrollé un modelo de predicción que permite anticipar la probabilidad de
+    churn de cada cliente y realicé un análisis mensual de la tasa de abandono.
+    Esto ayuda a la empresa a detectar tendencias, tomar decisiones estratégicas
+    de retención y mejorar la satisfacción de sus clientes.
+  </p>
+  <br />
+  <div
+    style="
+      margin: 20px;
+      padding: 15px 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f0f8ff;
+      font-family: 'Arial', sans-serif;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    "
+  >
+    <p style="font-weight: bold; font-size: 1.1em; color: #333">
+      Las variables que se tienen en cuenta son:
+    </p>
+    <ul style="list-style: none; padding-left: 0">
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >call__failure
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >complains
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >subscription__length
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >charge__amount
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >seconds_of_use
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >frequency_of_use
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >frequency_of_sms
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >distinct_called_numbers
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >age_group
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >tariff_plan
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>status
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>age
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >customer_value
+      </li>
+      <li
+        style="
+          margin: 8px 0;
+          padding-left: 20px;
+          position: relative;
+          font-weight: bold;
+          color: #d9534f;
+        "
+      >
+        <span style="position: absolute; left: 0; color: #d9534f">•</span>churn
+        (Nuestra variable a predecir)
+      </li>
+    </ul>
+  </div>
+
+  <p>
+    El modelo final fue un random forest y dió estos resultados en las metricas:
+  </p>
+  <div
+    style="
+      margin: 20px;
+      padding: 15px 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f0f8ff;
+      font-family: 'Arial', sans-serif;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    "
+  >
+    <ul style="list-style: none; padding-left: 0">
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >F1-score (clase churn): 0.76
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>F1
+        promedio en validación cruzada: 0.78
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >Desviación estándar en validación cruzada: 0.01
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span
+        >Precision: 0.82
+      </li>
+    </ul>
+  </div>
+  <div class="confusion-matrix-container">
+    <h3>Matriz de Confusión</h3>
+    <canvas id="confusionMatrix" width="400" height="300"></canvas>
+  </div>
+
+  <br />
+  <p>
+    Si querés ver más a detalle el proyecto
+    <a
+      href="https://github.com/Joaquin-Contreras/customer_churn"
+      target="_blanck"
+    >
+      <u>clickeá acá</u></a
+    >
+    para ir directo al repositorio
+  </p>
+</div>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Joaquín Contreras</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --blue-900: #0b1f4d;
+        --blue-800: #123b82;
+        --blue-700: #1d4ed8;
+        --blue-600: #2563eb;
+        --blue-300: #93c5fd;
+        --slate-900: #0f172a;
+        --slate-800: #1e293b;
+        --slate-600: #475569;
+        --gray-100: #f9fafb;
+        --card: rgba(255, 255, 255, 0.85);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        background: var(--gray-100);
+        color: var(--slate-800);
+        scroll-behavior: smooth;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      a:hover {
+        color: var(--blue-600);
+      }
+
+      /* HERO */
+      header {
+        height: 100vh;
+        background: linear-gradient(135deg, var(--blue-900), var(--blue-600));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      /* capa de partículas detrás del contenido */
+      #particles-js {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .hero {
+        max-width: 900px;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        color: #e2e8f0;
+        max-width: 650px;
+        margin: 0 auto 2rem;
+      }
+      .hero .foto {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      }
+      .hero .foto img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero .actions a {
+        display: inline-block;
+        background: var(--blue-600);
+        color: #fff;
+        padding: 0.9rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 600;
+        box-shadow: 0 10px 22px rgba(37, 99, 235, 0.25);
+      }
+      .hero .actions a:hover {
+        background: var(--blue-700);
+        transform: translateY(-2px);
+      }
+
+      /* SECCIONES */
+      section {
+        max-width: 1000px;
+        margin: 6rem auto;
+        padding: 0 2rem;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      section h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--slate-900);
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+      }
+      section h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 60%;
+        height: 3px;
+        background: var(--blue-600);
+        border-radius: 2px;
+      }
+
+      /* BIO */
+      .bio p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      }
+
+      /* PROYECTOS */
+      .proyectos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .proyectos .card {
+        background: var(--card);
+        backdrop-filter: blur(14px);
+        border-radius: 20px;
+        padding: 1.5rem;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .proyectos .card:hover {
+        transform: translateY(-6px) scale(1.02);
+      }
+      .proyectos .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 14px;
+        margin-bottom: 1rem;
+      }
+      .proyectos .card h3 {
+        font-size: 1.3rem;
+        margin: 0.5rem 0;
+      }
+      .proyectos .card p {
+        text-align: center;
+        color: var(--slate-600);
+        margin-bottom: 1rem;
+      }
+      .proyectos .card a {
+        background: var(--blue-600);
+        color: #fff;
+        font-weight: 600;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+      }
+      .proyectos .card a:hover {
+        background: var(--blue-700);
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-top: 0.75rem;
+      }
+      .badge {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #dbeafe, #c7d2fe);
+        color: var(--slate-900);
+        font-weight: 500;
+      }
+
+      /* EXPERIENCIA timeline */
+      .experiencia .item {
+        border-left: 3px solid var(--blue-600);
+        padding-left: 1.5rem;
+        margin-bottom: 3rem;
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      }
+      .experiencia h3 {
+        margin-bottom: 0.3rem;
+      }
+      .experiencia p strong {
+        color: var(--blue-700);
+      }
+      .experiencia ul {
+        margin-top: 0.8rem;
+        padding-left: 1.2rem;
+      }
+      .experiencia ul li {
+        margin-bottom: 0.4rem;
+      }
+
+      /* NUEVAS SECCIONES */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .info-card {
+        background: var(--card);
+        backdrop-filter: blur(10px);
+        border-radius: 18px;
+        padding: 1.8rem;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+      }
+      .info-card:hover {
+        transform: translateY(-6px) scale(1.02);
+      }
+      .info-card h3 {
+        margin-bottom: 1rem;
+        color: var(--blue-700);
+      }
+      .info-card ul {
+        padding-left: 1.2rem;
+      }
+      .info-card ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* CONTACTO */
+      .contacto .wrap {
+        background: #fff;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2rem;
+      }
+      .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .contact-form .full {
+        grid-column: 1/-1;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border-radius: 10px;
+        border: 1px solid #cbd5e1;
+        background: #fff;
+        font-size: 1rem;
+      }
+      .contact-form button {
+        background: var(--blue-600);
+        color: #fff;
+        border: none;
+        padding: 0.85rem 1.2rem;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 8px 22px rgba(37, 99, 235, 0.25);
+      }
+      .contact-form button:hover {
+        background: var(--blue-700);
+      }
+      .contact-data {
+        border-left: 2px dashed var(--blue-300);
+        padding-left: 1rem;
+      }
+      .contact-data li {
+        margin: 0.6rem 0;
+      }
+      .contact-data a {
+        color: var(--blue-700);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--slate-900);
+        color: #e2e8f0;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 6rem;
+      }
+      footer .socials {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+      }
+      footer .socials a {
+        font-size: 1.4rem;
+        color: #cbd5e1;
+      }
+      footer .socials a:hover {
+        color: #fff;
+      }
+
+      /* responsive */
+      @media (max-width: 900px) {
+        .contacto .wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* MODAL */
+      .modal {
+        display: none; /* oculto por defecto */
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .modal-content {
+        background: #fff;
+        margin: 8% auto;
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 700px;
+        position: relative;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      }
+
+      .modal-content h3 {
+        margin-bottom: 1rem;
+        color: var(--blue-700);
+      }
+
+      .modal-content p {
+        margin-bottom: 1.5rem;
+        color: var(--slate-800);
+      }
+
+      .modal-content .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--slate-600);
+      }
+
+      .modal-content .close:hover {
+        color: var(--blue-600);
+      }
+
+      .modal {
+        display: flex; /* cambiamos a flex para centrar */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-content {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 700px;
+        width: 90%;
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+      }
+
+      .modal.show .modal-content {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <header>
+      <!-- Capa interactiva de líneas -->
+      <div id="particles-js"></div>
+
+      <div class="hero">
+        <div class="foto">
+          <img
+            src="https://via.placeholder.com/250x250"
+            alt="Foto de Joaquín Contreras"
+          />
+        </div>
+        <h1>Joaquín Contreras</h1>
+        <p>
+          Científico de Datos con experiencia en pipelines y machine learning
+          aplicado a negocios. Busco integrarme a equipos donde pueda crecer en
+          data engineering, data science y cloud computing.
+        </p>
+        <div class="actions">
+          <a href="https://www.linkedin.com/in/python-datos" target="_blank">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+              alt="LinkedIn"
+              width="16"
+            />
+            LinkedIn
+          </a>
+          <a href="https://github.com/joaquin-contreras" target="_blank">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+              alt="GitHub"
+              width="16"
+            />
+            GitHub
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- BIO -->
+    <section class="bio">
+      <h2>Sobre mí</h2>
+      <p>
+        Científico de Datos con experiencia práctica en desarrollo de APIs
+        RESTful, pipelines de datos, y modelos de machine learning aplicados a
+        contextos reales de negocio. Estudiante avanzado de la Licenciatura en
+        Ciencias de Datos (UNSAM), con sólidos conocimientos en Python, SQL y
+        herramientas de análisis. Con foco en performance y mantenibilidad.
+        Busco integrarme a equipos donde pueda seguir creciendo en data
+        engineering, machine learning y cloud computing.
+      </p>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="proyectos">
+      <h2>Proyectos</h2>
+      <div class="proyectos-container">
+        <div class="card">
+          <img
+            src="imagenes/imagen-proyecto-1.jpg"
+            alt="Imagen de gráficos empresariales"
+            class="clickable"
+          />
+          <h3>Customer Churn prediction</h3>
+          <p>
+            El proyecto consiste en desarrollar un modelo que clasifique si un
+            cliente de una empresa de telecomunicaciones va a darse de baja en
+            el servicio
+          </p>
+          <a
+            href="https://github.com/Joaquin-Contreras/customer_churn"
+            target="_blank"
+            >Ver en GitHub</a
+          >
+          <div class="badges">
+            <span class="badge">Python</span
+            ><span class="badge">Scikit-learn</span
+            ><span class="badge">Pandas</span>
+          </div>
+          <!-- Contenido extra solo para este proyecto -->
+          <div class="extra-content" style="display: none">
+            <canvas id="churnChart" width="400" height="250"></canvas>
+            <p>Este gráfico muestra el comportamiento de churn por mes</p>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <img
+            src="imagenes/imagen-proyecto-2.png"
+            alt="Logo de DBT"
+            class="clickable"
+          />
+          <h3>Procesamiento de datos con DBT</h3>
+          <p>
+            Este proyecto consiste unicamente en DBT y en una pipeline para
+            crear Datamarts orientados a negocios especificos
+          </p>
+          <a
+            href="https://github.com/Joaquin-Contreras/dbt_company_analysis_first_project"
+            target="_blank"
+            >Ver en GitHub</a
+          >
+          <div class="badges">
+            <span class="badge">dbt</span>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="imagenes/imagen-proyecto-3.jpg"
+            alt="Imagen sobre Data Pipelines"
+            class="clickable"
+          />
+          <h3>Pipeline en PySpark</h3>
+          <p>
+            Este proyecto consiste en una pipe de datos donde se extraen
+            peliculas con la API de TMDB, se procesan y almacenan en MySQL
+            armando una base de datos personalizada
+          </p>
+          <a href="#" target="_blank">Ver en GitHub</a>
+          <div class="badges">
+            <span class="badge">MLflow</span><span class="badge">Spark</span
+            ><span class="badge">Python</span><span class="badge">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="experiencia">
+      <h2>Experiencia</h2>
+      <div class="item">
+        <h3>Científico de Datos – Shalion Inc.</h3>
+        <p><strong>Feb 2023 – Mar 2024 | Presencial</strong></p>
+        <ul>
+          <li>
+            Automatización de informes semanales con Power BI, reduciendo en un
+            50% el tiempo de entrega de reportes.
+          </li>
+          <li>
+            Desarrollo de queries avanzadas en SQL y gestión de bases de datos
+            PostgreSQL en entornos GCP.
+          </li>
+          <li>Mejora de pipelines de ETL y monitoreo de calidad de datos.</li>
+          <li>
+            Tecnologías: Python, Flask, SQL, PostgreSQL, Power BI, GCP, Git.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCACIÓN / HABILIDADES / IDIOMAS -->
+    <section class="formacion">
+      <h2>Formación y Habilidades</h2>
+      <div class="cards-grid">
+        <div class="info-card">
+          <h3>🎓 Educación</h3>
+          <p>
+            <strong>Licenciatura en Ciencias de Datos</strong> – Universidad
+            Nacional de San Martín (UNSAM)<br />2024 – Actualidad
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>🛠️ Habilidades Técnicas</h3>
+          <ul>
+            <li><strong>Lenguajes y ML:</strong> Python, SQL, scikit-learn</li>
+            <li>
+              <strong>Análisis & Visualización:</strong> pandas, NumPy,
+              matplotlib, seaborn, Power BI
+            </li>
+            <li>
+              <strong>Ingeniería de Datos:</strong> PostgreSQL, MySQL, Data
+              Warehouses
+            </li>
+            <li><strong>Dev & Cloud Tools:</strong> Git, GitHub, GitLab</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>🌍 Idiomas</h3>
+          <ul>
+            <li><strong>Español:</strong> Nativo</li>
+            <li><strong>Inglés:</strong> Intermedio (B2)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto">
+      <h2>Contacto</h2>
+      <div class="wrap">
+        <form class="contact-form" action="#" method="post">
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            placeholder="Tu nombre"
+            required
+          />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Tu email"
+            required
+          />
+          <input
+            class="full"
+            id="asunto"
+            name="asunto"
+            type="text"
+            placeholder="Asunto"
+            required
+          />
+          <textarea
+            class="full"
+            id="mensaje"
+            name="mensaje"
+            placeholder="Tu mensaje"
+            required
+          ></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+        <aside class="contact-data">
+          <h3>Datos</h3>
+          <ul>
+            <li>
+              📧
+              <a href="mailto:joacontre0@gmail.com" target="_blank"
+                >joacontre0@gmail.com</a
+              >
+            </li>
+            <li>📍 Buenos Aires, Argentina</li>
+            <li>
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+                alt="GitHub"
+                width="16"
+              />
+              <a href="https://www.github.com/joaquin-contreras" target="_blank"
+                >github.com/joaquin-contreras</a
+              >
+            </li>
+            <li>
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+                alt="LinkedIn"
+                width="16"
+              />
+              <a href="https://www.linkedin.com/in/python-datos" target="_blank"
+                >linkedin.com/in/python-datos</a
+              >
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Joaquín Contreras | Portafolio Personal</p>
+      <div class="socials">
+        <a href="https://www.github.com/joaquin-contreras">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+            alt="GitHub"
+            width="16"
+        /></a>
+        <a href="https://www.linkedin.com/in/python-datos"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+            alt="LinkedIn"
+            width="16"
+        /></a>
+        <a href="mailto:joacontre0@gmail.com">✉️</a>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const modalExtras = document.getElementById("modalExtras");
+        const closeBtn = document.querySelector(".modal .close");
+
+        // Seleccionamos todas las imágenes de los proyectos
+        const projectImages = document.querySelectorAll(
+          ".proyectos .card img.clickable"
+        );
+
+        projectImages.forEach((img) => {
+          img.addEventListener("click", () => {
+            const card = img.closest(".card");
+            modalTitle.textContent = card.querySelector("h3").textContent;
+            modalDescription.textContent = card.querySelector("p").textContent;
+
+            // Limpiamos el contenedor
+            modalExtras.innerHTML = "";
+
+            // Agregamos contenido extra si existe y lo forzamos a mostrar
+            const extra = card.querySelector(".extra-content");
+            if (extra) {
+              const extraClone = extra.cloneNode(true);
+              extraClone.style.display = "block"; // <--- esto es clave
+              modalExtras.appendChild(extraClone);
+            }
+
+            // Agregamos badges
+            const badges = card.querySelector(".badges").cloneNode(true);
+            modalExtras.appendChild(badges);
+
+            // Mostramos el modal
+            modal.classList.add("show");
+          });
+        });
+
+        // Cerrar modal
+        closeBtn.onclick = () => modal.classList.remove("show");
+        window.onclick = (e) => {
+          if (e.target === modal) modal.classList.remove("show");
+        };
+      });
+    </script>
+
+    <!-- Particles.js (líneas interactivas) -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.45 },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.35,
+            width: 1,
+          },
+          move: { enable: true, speed: 1.4, out_mode: "out" },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: { onhover: { enable: true, mode: "grab" }, resize: true },
+          modes: {
+            grab: { distance: 160, line_linked: { opacity: 0.6 } },
+            repulse: { distance: 200 },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+
+    <script>
+      // Fade-up animación
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      sections.forEach((s) => observer.observe(s));
+    </script>
+
+    <!-- MODAL PROYECTOS -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modalTitle">Título del proyecto</h3>
+        <p id="modalDescription">Descripción completa del proyecto.</p>
+        <div id="modalExtras">
+          <!-- Aquí puedes poner gráficos, imágenes, badges, etc. -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

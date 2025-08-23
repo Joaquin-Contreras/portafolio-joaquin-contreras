@@ -1,0 +1,115 @@
+<div class="extra-content">
+  <h2>Procesamiento de datos con DBT</h2>
+  <p>
+    Este proyecto simula datos de empresas ficticias para construir DataMarts
+    especializados que permiten responder preguntas de negocio de forma
+    automatizada. Incluye procesos de transformación de datos, pruebas de
+    integridad y generación de KPIs usando principalmente DBT y DuckDB.
+  </p>
+  Preguntas que se pueden responder con este proyecto:
+  <div
+    style="
+      margin: 20px;
+      padding: 15px 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f0f8ff;
+      font-family: 'Arial', sans-serif;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    "
+  >
+    <h3 style="margin-top: 0; color: #007bff">Empleados</h3>
+    <ul style="list-style: none; padding-left: 0; margin-top: 8px">
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>
+        ¿Cuál es el salario promedio de empleados activos de entre 20 y 35 años?
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>
+        ¿Quiénes tienen más de 10 años de experiencia y ganan menos de 10.000 al
+        año?
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>
+        ¿Qué empleados jóvenes (menores de 30 años) están activos y ganan más de
+        20.000?
+      </li>
+    </ul>
+
+    <h3 style="margin-top: 20px; color: #007bff">Empresas</h3>
+    <ul style="list-style: none; padding-left: 0; margin-top: 8px">
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>
+        ¿Cuáles tienen más de 500 empleados e ingresos mayores a 1.000.000?
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>
+        ¿Cuáles son las 10 industrias con más ingresos totales?
+      </li>
+      <li style="margin: 8px 0; padding-left: 20px; position: relative">
+        <span style="position: absolute; left: 0; color: #007bff">•</span>
+        ¿Cuáles son las 10 industrias con más empleados?
+      </li>
+    </ul>
+  </div>
+
+  Estructura del proyecto:
+  <div class="file-tree">
+    <ul>
+      <li>
+        company_analysis
+        <ul>
+          <li>
+            models
+            <ul>
+              <li>
+                staging # Limpieza de datos crudos (stg_employees,
+                stg_companies)
+                <ul>
+                  <li>stg_employees</li>
+                  <li>stg_companies</li>
+                </ul>
+              </li>
+              <li>
+                marts
+                <ul>
+                  <li>employees # Análisis de empleados</li>
+                  <li>companies # Análisis de empresas</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            seeds # Datos simulados en CSV (employees.csv, companies.csv)
+            <ul>
+              <li>employees.csv</li>
+              <li>companies.csv</li>
+            </ul>
+          </li>
+          <li>dbt_project.yml # Configuración principal de dbt</li>
+          <li>
+            packages.yml # Paquetes de dependencias (ej. dbt-expectations)
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <p>
+    Esto es un ejemplo básico de como se puede automatizar y optimizar un
+    proceso de creación de KPI's estandar de una empresa
+  </p>
+
+  <br />
+
+  <p>
+    Si querés ver más a detalle el proyecto
+    <a
+      href="https://github.com/Joaquin-Contreras/dbt_company_analysis_first_project"
+      target="_blanck"
+    >
+      <u>clickeá acá</u></a
+    >
+    para ir directo al repositorio
+  </p>
+</div>

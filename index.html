@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.3.0/dist/chartjs-chart-matrix.min.js"></script>
+
+    <title>Portafolio - Joaquín Contreras</title>
+
+    <!-- Fuentes y librerías externas -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- HERO -->
+    <header>
+      <!-- Capa interactiva de líneas -->
+      <div id="particles-js"></div>
+
+      <div class="hero">
+        <div class="foto">
+          <img
+            src="https://via.placeholder.com/250x250"
+            alt="Foto de Joaquín Contreras"
+          />
+        </div>
+        <h1>Joaquín Contreras</h1>
+        <p>
+          Transformo datos en decisiones estratégicas. Aplico machine learning,
+          data engineering y análisis avanzado para resolver problemas reales de
+          negocio y optimizar procesos.
+        </p>
+        <div class="actions">
+          <a href="https://www.linkedin.com/in/python-datos" target="_blank">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+              alt="LinkedIn"
+              width="16"
+            />
+            LinkedIn
+          </a>
+          <a href="https://github.com/joaquin-contreras" target="_blank">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+              alt="GitHub"
+              width="16"
+            />
+            GitHub
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- BIO -->
+    <section class="bio">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy Científico de Datos en formación con experiencia práctica en
+        pipelines de datos, desarrollo de APIs RESTful y modelos de machine
+        learning aplicados a escenarios reales. Me apasiona optimizar procesos
+        mediante análisis inteligente y construir soluciones escalables.
+        Actualmente profundizo en Python, SQL, Scikit-learn y herramientas de
+        análisis avanzadas, buscando oportunidades para crecer en data science,
+        data engineering y cloud computing.
+      </p>
+
+      <div class="cv-container">
+        <a href="assets/cv_joaquin.pdf" download class="btn-cv">Descargar CV</a>
+      </div>
+
+      <style>
+        .cv-container {
+          text-align: center; /* centra el botón */
+          margin-top: 20px; /* espacio entre el párrafo y el botón */
+        }
+
+        .btn-cv {
+          display: inline-block;
+          padding: 12px 25px; /* más cómodo y proporcionado */
+          background-color: #007bff;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-weight: bold;
+          font-size: 1rem;
+          transition: all 0.3s ease; /* animación suave al hover */
+        }
+
+        .btn-cv:hover {
+          background-color: #0056b3;
+          transform: translateY(-2px); /* efecto levitar un poco */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      </style>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="proyectos">
+      <h2>Proyectos</h2>
+      <div class="proyectos-container">
+        <div class="card" data-extra="extra-churn.html">
+          <img
+            src="imagenes/imagen-proyecto-1.jpg"
+            alt="Imagen de gráficos empresariales"
+            class="clickable"
+          />
+
+          <h3>Customer Churn prediction</h3>
+          <p>
+            El proyecto consiste en desarrollar un modelo que clasifique si un
+            cliente de una empresa de telecomunicaciones va a darse de baja en
+            el servicio
+          </p>
+          <a
+            href="https://github.com/Joaquin-Contreras/customer_churn"
+            target="_blank"
+            >Ver en GitHub</a
+          >
+          <a style="margin-top: 10px" class="clickeable">Ver más</a>
+
+          <div class="badges">
+            <span class="badge">Python</span
+            ><span class="badge">Scikit-learn</span
+            ><span class="badge">Pandas</span>
+          </div>
+        </div>
+
+        <div class="card" data-extra="extra-dbt.html">
+          <img
+            src="imagenes/imagen-proyecto-2.png"
+            alt="Logo de DBT"
+            class="clickable"
+          />
+          <h3>Procesamiento de datos con DBT</h3>
+          <p>
+            Este proyecto consiste unicamente en DBT y en una pipeline para
+            crear Datamarts orientados a negocios especificos
+          </p>
+          <a
+            href="https://github.com/Joaquin-Contreras/dbt_company_analysis_first_project"
+            target="_blank"
+            >Ver en GitHub</a
+          >
+          <a style="margin-top: 10px" class="clickeable">Ver más</a>
+          <div class="badges">
+            <span class="badge">DBT</span>
+            <span class="badge">SQL</span>
+            <span class="badge">DuckDB</span>
+          </div>
+        </div>
+        <div class="card" data-extra="extra-pyspark.html">
+          <img
+            src="imagenes/imagen-proyecto-3.jpg"
+            alt="Imagen sobre Data Pipelines"
+            class="clickable"
+          />
+          <h3>Pipeline en PySpark</h3>
+          <p>
+            Este proyecto consiste en una pipe de datos donde se extraen
+            peliculas con la API de TMDB, se procesan y almacenan en MySQL
+            armando una base de datos personalizada
+          </p>
+          <a
+            href="https://github.com/Joaquin-Contreras/complete_ETL_PySpark"
+            target="_blank"
+            >Ver en GitHub</a
+          >
+          <a style="margin-top: 10px" class="clickeable">Ver más</a>
+          <div class="badges">
+            <span class="badge">MLflow</span><span class="badge">Spark</span
+            ><span class="badge">Python</span><span class="badge">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="experiencia">
+      <h2>Experiencia</h2>
+      <div class="item">
+        <h3>Científico de Datos – Shalion</h3>
+        <p><strong>Feb 2023 – Mar 2024 | Presencial</strong></p>
+        <ul>
+          <li>
+            Automatización de informes semanales con Power BI, reduciendo en un
+            50% el tiempo de entrega de reportes.
+          </li>
+          <li>
+            Desarrollo de queries avanzadas en SQL y gestión de bases de datos
+            PostgreSQL en entornos GCP.
+          </li>
+          <li>Mejora de pipelines de ETL y monitoreo de calidad de datos.</li>
+          <li>Tecnologías: Python, SQL, PostgreSQL, Power BI, GCP, Git.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCACIÓN / HABILIDADES / IDIOMAS -->
+    <section class="formacion">
+      <h2>Formación y Habilidades</h2>
+      <div class="cards-grid">
+        <div class="info-card">
+          <h3>🎓 Educación</h3>
+          <p>
+            <strong>Licenciatura en Ciencias de Datos</strong> – Universidad
+            Nacional de San Martín (UNSAM)<br />2024 – Actualidad
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>🛠️ Habilidades Técnicas</h3>
+          <ul>
+            <li><strong>Lenguajes y ML:</strong> Python, SQL, scikit-learn</li>
+            <li>
+              <strong>Análisis & Visualización:</strong> pandas, NumPy,
+              matplotlib, seaborn, Power BI
+            </li>
+            <li>
+              <strong>Ingeniería de Datos:</strong> PostgreSQL, MySQL, Data
+              Warehouses, PySpark, DBT
+            </li>
+            <li><strong>Dev & Cloud Tools:</strong> Git, GitHub, GitLab</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>🌍 Idiomas</h3>
+          <ul>
+            <li><strong>Español:</strong> Nativo</li>
+            <li><strong>Inglés:</strong> Intermedio (B2)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto">
+      <h2>Contacto</h2>
+      <div class="wrap">
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/joacontre0@gmail.com"
+          method="POST"
+        >
+          <input
+            id="nombre"
+            name="name"
+            type="text"
+            placeholder="Tu nombre"
+            required
+          />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Tu email"
+            required
+          />
+          <input
+            class="full"
+            id="asunto"
+            name="subject"
+            type="text"
+            placeholder="Asunto"
+            required
+          />
+          <textarea
+            class="full"
+            id="mensaje"
+            name="message"
+            placeholder="Tu mensaje"
+            required
+          ></textarea>
+          <!-- Redirigir después de enviar -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://tu-sitio.com/gracias.html"
+          />
+          <button type="submit">Enviar mensaje</button>
+        </form>
+
+        <aside class="contact-data">
+          <h3>Datos</h3>
+          <ul>
+            <li>
+              📧
+              <a href="mailto:joacontre0@gmail.com" target="_blank"
+                >joacontre0@gmail.com</a
+              >
+            </li>
+            <li>📍 Buenos Aires, Argentina</li>
+            <li>
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+                alt="GitHub"
+                width="16"
+              />
+              <a href="https://www.github.com/joaquin-contreras" target="_blank"
+                >github.com/joaquin-contreras</a
+              >
+            </li>
+            <li>
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+                alt="LinkedIn"
+                width="16"
+              />
+              <a href="https://www.linkedin.com/in/python-datos" target="_blank"
+                >linkedin.com/in/python-datos</a
+              >
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+    <script>
+      const form = document.querySelector(".contact-form");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // Evita la recarga de la página
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch(
+            "https://formsubmit.co/ajax/joacontre0@gmail.com",
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
+
+          if (response.ok) {
+            form.reset(); // Limpia los campos
+            // Mensaje de éxito
+            alert("¡Gracias! Tu mensaje fue enviado. Te responderé pronto.");
+          } else {
+            alert("Hubo un error al enviar tu mensaje. Intenta de nuevo.");
+          }
+        } catch (error) {
+          alert("Hubo un error al enviar tu mensaje. Intenta de nuevo.");
+        }
+      });
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Joaquín Contreras | Portafolio Personal</p>
+      <div class="socials">
+        <a href="https://www.github.com/joaquin-contreras">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+            alt="GitHub"
+            width="16"
+        /></a>
+        <a href="https://www.linkedin.com/in/python-datos"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg"
+            alt="LinkedIn"
+            width="16"
+        /></a>
+        <a href="mailto:joacontre0@gmail.com">✉️</a>
+      </div>
+    </footer>
+
+    <!-- MODAL PROYECTOS -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modalTitle">Título del proyecto</h3>
+        <p id="modalDescription">Descripción completa del proyecto.</p>
+        <div id="modalExtras">
+          <!-- Aquí puedes poner gráficos, imágenes, badges, etc. -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Librerías externas -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
